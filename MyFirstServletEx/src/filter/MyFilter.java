@@ -48,15 +48,16 @@ public class MyFilter implements Filter {
 		chain.doFilter(request, response);
 		long endTime = System.currentTimeMillis();
 		System.out.println("Request Processing Time is "+(endTime-startTime));*/
-		/*String regex = "[A-Za-z]";
+		String regex = "^[a-zA-Z]*$";
 		HttpServletRequest hReq = (HttpServletRequest) request;
 		String name = hReq.getParameter("name");
-		if(null != name && !name.contains(regex)) {
+		System.out.println(name+"============");
+		if(null != name && !name.matches(regex)) {
 			throw new RuntimeException("Name Should Not contain numbers or speacial characters");
 		} else {
 			chain.doFilter(request, response);
-		}*/
-		chain.doFilter(request, response);
+		}
+		//chain.doFilter(request, response);
 	}
 
 	/**
