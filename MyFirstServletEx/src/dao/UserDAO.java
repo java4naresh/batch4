@@ -7,8 +7,9 @@ import java.sql.SQLException;
 
 import pojo.User;
 
-public class UserDAO {
+public class UserDAO implements UserDAOI{
 	
+	@Override
 	public void saveUser(Connection con , User user) throws SQLException {
 		System.out.println(con);
 		PreparedStatement ps = con.prepareStatement("insert into user values(?,?)");
