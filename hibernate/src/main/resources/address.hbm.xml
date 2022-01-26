@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="hibernate.entity.Address" table="user_address" catalog="anil">
+<id name="addId" type="java.lang.Integer" column="add_id"></id>
+<property name="address1" type="java.lang.String" column="address1"></property>
+<property name="address2" type="java.lang.String"></property>
+<property name="city" type="java.lang.String"></property>
+<property name="pincode" type="java.lang.Integer"></property>
+<property name="state" type="java.lang.String"></property>
+<property name="country" type="java.lang.String"></property>
+</class>
+</hibernate-mapping>

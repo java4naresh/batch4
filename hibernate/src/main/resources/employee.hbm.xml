@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- <class name="hibernate.entity.Employee" table="employee" discriminator-value="emp">
+
+<id name="id" type="java.lang.Integer">
+<generator class="increment"></generator>
+</id>
+<discriminator column="type" type="string"></discriminator>
+<property name="companyName" column="company_name" type="java.lang.String"></property>
+<property name="manager" column="manager" type="java.lang.String"></property>
+<subclass name="hibernate.entity.ContractEmployee" discriminator-value="contract"> 
+<property name="teamLead" column="teamLead" type="java.lang.String"></property>
+<property name="hourlyPay" column="hourlyPay" type="java.lang.Integer"></property>
+</subclass>
+
+<subclass name="hibernate.entity.PerminentEmployee" discriminator-value="perminent"> 
+<property name="bonus" column="bonus" type="java.lang.Integer"></property>
+<property name="salary" column="salary" type="java.lang.Long"></property>
+</subclass>
+</class> -->
+
+<class name="hibernate.entity.Employee" table="employee">
+
+<id name="id" type="java.lang.Integer">
+<generator class="increment"></generator>
+</id>
+
+<property name="companyName" column="company_name" type="java.lang.String"></property>
+<property name="manager" column="manager" type="java.lang.String"></property>
+
+<joined-subclass name="hibernate.entity.ContractEmployee" table="contract_employee"> 
+<key column="id"></key>
+<property name="teamLead" column="teamLead" type="java.lang.String"></property>
+<property name="hourlyPay" column="hourlyPay" type="java.lang.Integer"></property>
+</joined-subclass>
+
+<joined-subclass name="hibernate.entity.PerminentEmployee" table="perminent_employee">
+<key column="id"></key> 
+<property name="bonus" column="bonus" type="java.lang.Integer"></property>
+<property name="salary" column="salary" type="java.lang.Long"></property>
+</joined-subclass>
+</class>
+
+</hibernate-mapping>

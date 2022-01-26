@@ -4,8 +4,8 @@
 
 <hibernate-mapping>
 <class name="hibernate.entity.Student" table="student" catalog="anil">
-<id name="sid" type="java.lang.Integer">
-<column name="sid"></column>
+<id name="sid" type="java.lang.Integer" column="sid">
+<generator class="assigned"></generator>
 </id>
 
 <property name="sname" type="java.lang.String">

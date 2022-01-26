@@ -1,12 +1,26 @@
 package hibernate.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="student")
 public class Student {
 	
+	@Id
 	private Integer sid;
 	
+	@Column(name="sname")
 	private String sname;
 	
+	@Column(name="scourse")
 	private String scourse;
+	
+	public Student() {
+		System.out.println("Student Cons");
+	}
 
 	public Integer getSid() {
 		System.out.println("getSid");
@@ -32,6 +46,12 @@ public class Student {
 	public void setScourse(String scourse) {
 		this.scourse = scourse;
 	}
+
+	@Override
+	public String toString() {
+		return "Student [sid=" + sid + ", sname=" + sname + ", scourse=" + scourse + "]";
+	}
+	
 	
 	
 

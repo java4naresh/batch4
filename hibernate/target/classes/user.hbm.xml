@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="hibernate.entity.User" table="user" catalog="anil">
+<id name="userId" type="java.lang.Integer" column="user_id"></id>
+<property name="name" type="java.lang.String" column="user_name"></property>
+<property name="gender" type="java.lang.Character" column="gender"></property>
+<property name="age" type="java.lang.Integer" column="age"></property>
+
+<one-to-one name="add" class="hibernate.entity.Address" foreign-key="add_id">
+</one-to-one>
+
+</class>
+</hibernate-mapping>
